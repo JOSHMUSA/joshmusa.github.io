@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <head>
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -565,6 +564,10 @@ into a full-stack software engineer and entrepreneur.
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>   
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <script>
 console.log("JS is running correctly");
@@ -716,6 +719,39 @@ document.getElementById("contact-form").addEventListener("submit", function(e){
     emailjs.sendForm("service_id", "template_id", this)
     .then(() => alert("Message sent successfully!"));
 });
+
+/* =====================
+   EMAILJS LOGIC
+===================== */
+// Initialize EmailJS with your Public Key
+emailjs.init("eB3LZT0yLxduqDORa"); 
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Change the button text temporarily to show it's working
+    const submitBtn = this.querySelector("button[type='submit']");
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    // Send the form data
+    emailjs.sendForm("service_gy8mmrw", "template_kjblszs", this)
+        .then(() => {
+            alert("Message sent successfully, Joshua!");
+            this.reset(); // Clears the form fields after successful transmission
+        })
+        .catch((error) => {
+            alert("Oops... Something went wrong. Please check console.");
+            console.error("EmailJS Error:", error);
+        })
+        .finally(() => {
+            // Re-enable the button
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+        });
+});   
+   
 
 </script>
 </body>
