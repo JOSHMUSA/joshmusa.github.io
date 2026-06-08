@@ -52,10 +52,12 @@ nav {
 }
 
 .nav-logo {
-    height: 70px;        /* Restricts logo height nicely inside the navbar */
-    width: auto;         /* Keeps the aspect ratio perfect */
+    height: 100%;             /* Tells the image to match the navbar height */
+    max-height: 70px;         /* Match this exactly to your navbar's height */
+    width: auto;              /* Keeps the logo aspect ratio perfect */
     object-fit: contain;
-    transition: transform 0.3s ease;
+    mix-blend-mode: screen;   /* CRITICAL: Automatically hides the black background box! */
+    display: block;
 }
 
 .nav-logo:hover {
