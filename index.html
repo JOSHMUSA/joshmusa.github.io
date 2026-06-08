@@ -8,25 +8,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <title>Joshua | Portfolio</title>
 
 <style>
- /* =====================
-   NAVBAR LOGO STYLE
+/* =====================
+   NAVBAR (UPDATED)
 ===================== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;      /* Vertically centers logo and links perfectly */
+    padding: 10px 10%;        /* Reduced vertical padding from 15px to 10px */
+    height: 70px;             /* Gives the navbar a structured, reliable height */
+    z-index: 1000;
+}
+
+/* Ensure the link container doesn't behave like a text link */
 .logo-link {
     display: flex;
     align-items: center;
-    margin: 0 !important; /* Prevents global nav margin overriding */
+    height: 100%;
+    text-decoration: none;
+    margin: 0 !important;     /* Overrides any global 'nav a' margins */
 }
 
+/* The actual logo image rules */
 .nav-logo {
-    height: 40px;        /* Restricts logo height nicely inside the navbar */
-    width: auto;         /* Keeps the aspect ratio perfect */
-    object-fit: contain;
-    transition: transform 0.3s ease;
+    max-height: 50px;         /* Caps the logo size so it never stretches the nav */
+    width: auto;              /* Scales the width dynamically to prevent distortion */
+    object-fit: contain;      /* Keeps the image crisp and proportional */
+    display: block;
 }
-
-.nav-logo:hover {
-    transform: scale(1.05); /* Adds a subtle interactive pop when hovered */
-}  
 /* =====================
    ROOT THEMES
 ===================== */
