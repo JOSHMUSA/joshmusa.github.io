@@ -36,9 +36,11 @@ nav {
 
 /* The actual logo image rules */
 .nav-logo {
-    max-height: 50px;         /* Caps the logo size so it never stretches the nav */
-    width: auto;              /* Scales the width dynamically to prevent distortion */
-    object-fit: contain;      /* Keeps the image crisp and proportional */
+    height: 100%;             /* Tells the image to match the navbar height */
+    max-height: 70px;         /* Match this exactly to your navbar's height */
+    width: auto;              /* Keeps the logo aspect ratio perfect */
+    object-fit: contain;
+    mix-blend-mode: screen;   /* CRITICAL: Automatically hides the black background box! */
     display: block;
 }
 
