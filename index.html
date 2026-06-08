@@ -41,6 +41,26 @@ nav {
     object-fit: contain;      /* Keeps the image crisp and proportional */
     display: block;
 }
+
+/* =====================
+   NAVBAR LOGO STYLE
+===================== */
+.logo-link {
+    display: flex;
+    align-items: center;
+    margin: 0 !important; /* Prevents global nav margin overriding */
+}
+
+.nav-logo {
+    height: 40px;        /* Restricts logo height nicely inside the navbar */
+    width: auto;         /* Keeps the aspect ratio perfect */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05); /* Adds a subtle interactive pop when hovered */
+}   
 /* =====================
    ROOT THEMES
 ===================== */
