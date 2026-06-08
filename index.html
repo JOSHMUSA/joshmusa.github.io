@@ -40,8 +40,10 @@ nav {
     max-height: 70px;         /* Match this exactly to your navbar's height */
     width: auto;              /* Keeps the logo aspect ratio perfect */
     object-fit: contain;
-    mix-blend-mode: lighten;   /* CRITICAL: Automatically hides the black background box! */
     display: block;
+   /* This filter configuration targets dark backgrounds and drops their opacity */
+    filter: brightness(1.2) contrast(1.1);
+    mix-blend-mode: screen;
 }
 
 /* =====================
